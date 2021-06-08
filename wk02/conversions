@@ -1,0 +1,22 @@
+2. Show what the following decimal values look like in 
+8-bit binary, 3-digit octal, and 2-digit hexadecimal:
+
+decimal: 1
+binary:  0001
+octal:   001
+hexa:    0x1
+
+decimal: 8
+binary:  1000
+octal:   0010
+hexa:    0x8
+
+decimal: 100
+binary:  0110 0100
+octal:  
+hexa:   
+
+decimal: 127
+binary: 
+octal:  
+hexa:   
