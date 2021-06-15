@@ -68,21 +68,21 @@ typedef unsigned int Word;
  */
 Word reverseBits(Word w) {
     Word ret = 0;
+    int grab_mask = 1; // 0000...0001
+    int set_mask = 1 << 31; // 1000...0000
 
-    for (int i = 0; i < 32; i++) {
-        // extract the bit using bitwise AND by doing val & mask
-        // FIRST ITERATION -> mask = 0000 ... 0001
-        // SEC ITERATION -> mask   = 0000 ... 0010
-        // THIRD ITERATION -> mask = 0000 ... 0100
-        int mask = 1 << i;
-        int result = w & mask;
+    for(int i = 0; i < 32; i++) {
+        // first iteration -> grab rightmost bit ->  0000...0001
+        // second iteration -> grab 2nd right bit -> 0000...0010
+        // third iteration -> grab 3rd right bit ->  0000...0100
+        grab_mask = grab_mask << 1;
+        int result = w & grab_mask;
         if (result != 0) {
-            // set the bit in the return value using bitwise OR
-            // FIRST ITERATION -> mask = 1000 ... 0000
-            // SEC ITERATION -> mask   = 0100 ... 0000
-            // THIRD ITERATION -> mask = 0010 ... 0000
-            int ret_mask = 1 << (31 - i);
-            ret = ret | ret_mask;
+            // first iteration ->  1000...0000
+            // second iteration -> 0100...0000
+            // third iteration ->  0010...0000
+            set_mask = set_mask >> 1;
+            ret = ret | set_mask;
         }
     }
 

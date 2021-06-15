@@ -1,0 +1,9 @@
+struct {
+    int a;
+    float b;
+} x1;
+
+union {
+    int a;
+    float b;
+} x2;
