@@ -1,0 +1,30 @@
+##### MIPS #####
+Registers
+$zero   ->
+$v0, v1 ->
+$a0-a3  ->
+$t?     ->
+$s?     ->
+$ra     -> 
+
+Instructions
+MATH INSTRUCTIONS 
+$t2 = $t0 + $t1
+add     $t2, $t0, $t1
+
+LOADING INSTRUCTIONS 
+1. Loading an immediate value (1, 2, 3, 4, 'a')
+li  $t0, 'a'
+
+2. Loading from an address (data section)
+la  $t0, prompt
+lw  $t0, var
+lb  $t0, ch
+
+3. Loading from another register $t0 = $t1 
+move    $t0, $t1
+
+System Calls
+1. Load correct number into $v0
+2. Load correct arguments
+3. Call syscall
