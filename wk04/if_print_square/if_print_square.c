@@ -17,3 +17,17 @@ int main(void) {
     
     return 0;
 }
+
+x = 100;
+if (x >= 46340) {
+    printf("square too big for 32 bits\n");
+} else {
+    y = x * x;
+    printf("%d\n", y);
+}
+
+if (x < 46340) goto else
+    printf("square too big for 32 bits\n");
+else 
+    y = x * x;
+    printf("%d\n", y);
