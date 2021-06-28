@@ -1,30 +1,59 @@
 ##### MIPS #####
-Registers
-$zero   ->
-$v0, v1 ->
-$a0-a3  ->
-$t?     ->
-$s?     ->
-$ra     -> 
+Registers -> 32 registers 
+
+int add(int x, int y) {
+    int sum = x + y;
+    return sum;
+}
+
+$zero   -> always has the value of 0
+$v0, v1 -> function return values
+$a0-a3  -> function arguments
+$t0-9   -> temporary registers 
+$s?     -> safe registers
+$ra     -> return address
 
 Instructions
 MATH INSTRUCTIONS 
-$t2 = $t0 + $t1
-add     $t2, $t0, $t1
+$t0 -> x
+$t1 -> y
+y = x + x
+$t1 = $t0 + $t0
+
+add     $t1, $t0, $t0
+
 
 LOADING INSTRUCTIONS 
+put a value into a register 
+
 1. Loading an immediate value (1, 2, 3, 4, 'a')
+Load the immediate value 'a' into $t0 
 li  $t0, 'a'
+Load the immediate value 500 into $t1
+li  $t1, 500
+
 
 2. Loading from an address (data section)
-la  $t0, prompt
-lw  $t0, var
-lb  $t0, ch
+la  $t0, numbers    -> loads the address of numbers into $t0
+
+lw -> load word -> word is 4 bytes
+int -> 4 bytes 
+lw -> loading ints into a register from data
+lw  $t0, num 
+
+lb -> load byte -> byte is 1 byte 
+char -> 1 byte
+lb -> load a byte 
+lb  $t0, ch 
 
 3. Loading from another register $t0 = $t1 
 move    $t0, $t1
 
-System Calls
+
+
+System Calls -> function call 
+scan_int()
+
 1. Load correct number into $v0
 2. Load correct arguments
 3. Call syscall
