@@ -8,8 +8,25 @@ int main(void) {
 }
 
 // WHILE VERSION
+int main(void) {
+    int x = 24;
+    while (x < 42) {
+        printf("%d\n", x);
+        x += 3;
+    }
+    return 0;
+}
 
+int i = 0;
+while (i < something) {
+    int j = 0;
+    while (j < something) {
+        ....
+        j++;
+    }
 
+    i++;
+}
 
 
 
