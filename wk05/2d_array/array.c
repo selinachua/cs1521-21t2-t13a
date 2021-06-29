@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-char flag[6][12] = {
+
+int flag[6][12] = {
     {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'},
     {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'},
     {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
@@ -9,11 +10,26 @@ char flag[6][12] = {
     {'#', '#', '#', '#', '#', '.', '.', '#', '#', '#', '#', '#'}
 };
 
+// flag[0][3] -> offset = 3
+//      = flag address + 3
+
+// flag[2][4] -> offset = (2 * 12) + 4
+//      = flag address + (2 * 12) + 4
+
+// flag[i][j]
+// general formula
+// offset = (i * N_COL) + j
+
+// flag[5][4]
+// offset = (5 * 12) + 4
+
 int main(void) {
     for (int row = 0; row < 6; row++) {
-        for (int col = 0; col < 12; col++)
-            printf ("%c", flag[row][col]);
+        for (int col = 0; col < 12; col++) {
+            char ch = flag[row][col];
+            printf ("%c", ch);
+        }
         printf ("\n");
     }
-
+    return 0;
 }
