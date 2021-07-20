@@ -1,0 +1,28 @@
+Q6.
+a) Parent runs first until completion, Child runs into completion
+Hello
+Gan bei
+Goodbye
+Prost
+Goodbye
+
+b) Child runs first until completion, Parent runs into completion
+Hello
+Prost
+Goodbye
+Gan bei
+Goodbye
+
+c) 
+Hello
+Prost
+Gan bei
+Goodbye
+Goodbye
+
+d)
+Hello
+Gan bei
+Prost
+Goodbye
+Goodbye
