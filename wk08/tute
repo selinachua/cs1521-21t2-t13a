@@ -26,3 +26,10 @@ Gan bei
 Prost
 Goodbye
 Goodbye
+
+PATH VARIABLE
+PATH="a:b:c:d:e"
+a = dir1
+b = dir2
+c = dir3
+...
